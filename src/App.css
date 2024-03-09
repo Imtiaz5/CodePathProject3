@@ -33,6 +33,13 @@
   }
 }
 
+body {
+  background-image: url("linux2.jpg");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
  .card {
   padding: 2em;
   position: relative;
