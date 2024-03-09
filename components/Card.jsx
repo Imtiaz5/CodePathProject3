@@ -18,13 +18,13 @@ const Card = ({ question, answer }) => {
 
   return (
     <div className="card" onClick={toggleAnswer}>
-      <div className="flip-card-inner">
+      <div className={`flip-card-inner ${showAnswer ? "flipped" : ""}`}>
         <div className="flip-card-front">
           <img src={flashcardImage} alt="Flashcard" />
-          <h2>{question}</h2>
+          <h2 className="card-text">{question}</h2>
         </div>
         <div className="flip-card-back">
-          <h2>{answer}</h2>
+          <h2 className="card-text">{answer}</h2>
         </div>
       </div>
     </div>

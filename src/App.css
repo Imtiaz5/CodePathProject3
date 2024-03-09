@@ -33,19 +33,13 @@
   }
 }
 
-.card {
+ .card {
   padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.card {
   position: relative;
   width: 200px;
   height: 300px;
   perspective: 1000px;
+  cursor: pointer;
 }
 
 .card .flip-card-inner {
@@ -55,30 +49,119 @@
   transform-style: preserve-3d;
 }
 
-.card:hover .flip-card-inner {
+.card:hover > .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.card .flip-card-front, .card .flip-card-back {
+.card .flip-card-front {
+  background-image: url("/flashcard.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+.card .flip-card-front,
+.card .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
 }
 
-.card .flip-card-front {
-  background-color: #1a1a1a;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+
+.card .flip-card-front h2,
+.card .flip-card-back h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  backface-visibility: hidden;
+}
+
+.card .flip-card-back h2 {
+  color: #1a1a1a;
+}
+
+.card.flipped .flip-card-front h2 {
+  display: none;
 }
 
 .card .flip-card-back {
-  background-color: #fff;
   color: #1a1a1a;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  transform: rotateY(180deg);
+  background: none;
+} 
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: none;
+  font-family: Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 350px;
+  height: 500px;
+  perspective: 800px;
+}
+
+.container:hover > .card {
+  cursor: pointer;
   transform: rotateY(180deg);
 }
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front{
+  /*background-image: url("flashcard.webp"); */
+/*  background-size: 350px 100px;
+}
+
+.back {
+  background-color: none;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+} */

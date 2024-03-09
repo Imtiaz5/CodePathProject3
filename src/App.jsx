@@ -26,7 +26,6 @@ const App = () => {
         <Card
           question={flashcards[currentCardIndex].question}
           answer={flashcards[currentCardIndex].answer}
-          onCardChange={() => {}} // Placeholder function, not needed for this purpose
         />
       </div>
       <div className="navigation">
