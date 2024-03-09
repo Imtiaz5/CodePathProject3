@@ -58,7 +58,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: purple;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,11 +84,15 @@
   transform: translate(-50%, -50%);
   margin: 0;
   padding: 0;
-  backface-visibility: hidden;
+  font-size: 1rem;
+  line-height: 1.5;;
+  backface-visibility: hidden; /*the most painful part and i finally found out how to fix it!*/
 }
 
 .card .flip-card-back h2 {
   color: #1a1a1a;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .card.flipped .flip-card-front h2 {
