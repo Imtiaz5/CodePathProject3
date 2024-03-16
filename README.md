@@ -44,6 +44,8 @@ GIF created with ...  FFMPEG
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+
 I can't seem to change the hover feature into a click feature no matter what I do. I have tried multiple times, but I gave up and stuck with the werid hover feature.
 ## License
 
