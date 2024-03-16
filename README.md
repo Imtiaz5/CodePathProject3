@@ -31,7 +31,6 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <img src='https://i.imgur.com/X0P5UdP.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-![Project3](https://github.com/Imtiaz5/CodePathProject3/assets/81115631/9979f10c-5927-4ca5-9f7c-fe4c8dc4a17b)
 https://imgur.com/a/0x3BPbv
 https://i.imgur.com/X0P5UdP.gif
 
