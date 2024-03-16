@@ -4,14 +4,14 @@ import flashcardImage from "/flashcard.webp";
 
 
 // eslint-disable-next-line react/prop-types
-const Card = ({ question, answer }) => {
+const Card = ({ question, answer, userAnswer, setUserAnswer, showFeedback, isAnswerCorrect }) => {
   const [showAnswer, setShowAnswer] = useState(false);
 
   const toggleAnswer = () => {
     setShowAnswer(!showAnswer);
   };
 
-  // Reset showAnswer whenever the question or answer changes
+
   useEffect(() => {
     setShowAnswer(false);
   }, [question, answer]);
@@ -24,8 +24,23 @@ const Card = ({ question, answer }) => {
           <h2 className="card-text">{question}</h2>
         </div>
         <div className="flip-card-back">
-          <h2 className="card-text">{answer}</h2>
+          {showFeedback && (
+            <p className={`feedback-text ${isAnswerCorrect ? "correct" : "incorrect"}`}>
+              {isAnswerCorrect ? "Correct!" : "Incorrect!"}
+            </p>
+          )}
+          <h2 className={`card-text ${isAnswerCorrect ? "correct" : "incorrect"}`}>{answer}</h2>
         </div>
+      </div>
+      <div className="input-container ignore-hover">
+        <div className="input-overlay"></div>
+        <input
+          type="text"
+          placeholder="Enter your answer"
+          value={userAnswer}
+          onChange={(e) => setUserAnswer(e.target.value)}
+          disabled={showFeedback}
+        />
       </div>
     </div>
   );
